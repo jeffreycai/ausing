@@ -6,7 +6,7 @@ AuthName "Please log in"
 AuthType Basic
 require valid-user
 
-SetEnvIf Host 8diantoutiao.websitesydney.net secure_content
+SetEnvIf Host ausaving.websitesydney.net secure_content
 
 ### Apache 2.2 ###
 #Order Allow,Deny
@@ -27,7 +27,7 @@ SetEnvIf Host 8diantoutiao.websitesydney.net secure_content
 <IfModule mod_rewrite.c>
   RewriteEngine on
 
-  RewriteCond %{HTTP_HOST} ^8diantoutiao\.com [NC]
+  RewriteCond %{HTTP_HOST} ^ausaving\.com [NC]
   RewriteRule ^ http://www.%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 </IfModule>
 

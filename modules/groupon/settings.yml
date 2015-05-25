@@ -1,0 +1,10 @@
+groupon:
+  api:
+    divisions:
+#      - national-deal
+#      - sydney-premium
+      - sydney
+#      - melbourne
+#      - melbourne-premium
+    affiliate_id: 200615
+    media_id: 212556

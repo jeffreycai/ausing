@@ -1,0 +1,6 @@
+routing:
+  import:
+    path: ^\/admin\/groupon\/import\/?$
+    isSecure: 1
+    i18n: 0
+    controller: groupon/backend/import

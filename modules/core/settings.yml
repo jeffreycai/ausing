@@ -9,4 +9,4 @@ i18n_lang:
   zh: 中文
   en: English
 # this is only effective when i18n = 0
-i18n_lang_default: zh
+i18n_lang_default: en
