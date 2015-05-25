@@ -1,0 +1,14 @@
+assets:
+  backend:
+    js:
+      jquery_ui:
+        path: .?
+        position: bottom
+        weight: 25
+        source: ../libraries/jquery-ui-1.11.1.custom/jquery-ui.min.js
+    css:
+      jquery_ui:
+        path: .?
+        position: top
+        weight: 10
+        source: ../libraries/jquery-ui-1.11.1.custom/jquery-ui.min.css

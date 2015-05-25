@@ -1,0 +1,24 @@
+mail:
+  # conf for email sending to amdin
+  admin:
+    to: jeffreycaizhenyuan@gmail.com
+    from: bluestreamjc@tpg.com.au
+    mailer: smtp
+    SMTPSecure: tls
+    host: mail.tpg.com.au
+    port: 587
+    username: bluestreamjc@tpg.com.au
+    nickname: 8点头条
+    password: Monday01
+  
+  # general conf for site-wide emails
+  general:
+    reply_to: jeffreycaizhenyuan@gmail.com
+    from: jeffreycaizhenyuan@gmail.com
+    from_nickname: caizhenyuan.com
+    mailer: smtp
+    SMTPSecure: tls
+    host: smtp.mandrillapp.com
+    port: 587
+    username: jeangirl186@163.com
+    password: bHw0jZxX9Kb4QrMqIYY-fg

@@ -1,0 +1,87 @@
+project:
+  pk: id
+  fields:
+    id: INT NOT NULL AUTO_INCREMENT
+    title: VARCHAR(512) NOT NULL
+    password: VARCHAR(20)
+    email: VARCHAR(30)
+    description_en: TEXT
+    description_zh: TEXT
+    active: TINYINT(1) DEFAULT 1
+    hot: TINYINT(1) DEFAULT 1
+    price: DECIMAL(6) DEFAULT 0
+    images: VARCHAR(800)
+    thumbnail: VARCHAR(100)
+  form:
+    fields:
+      title:
+        widget: text
+        widget_conf:
+          required: 1
+          size: 150
+      password:
+        widget: password
+        widget_conf:
+          required: 1
+          size: 15
+      email:
+        widget: email
+        widget_conf:
+          required: 1
+          size: 30
+      description_en:
+        widget: textarea
+        widget_conf:
+          required: 0
+          wysiwyg: 1
+      description_zh:
+        widget: textarea
+        widget_conf:
+          required: 1
+          wysiwyg: 0
+      active:
+        widget: checkbox_single
+        widget_conf: 
+      owners:
+        widget: checkbox_multiple
+        widget_conf:
+          required: 1
+          options:
+            jack: Jack
+            sue: Sue
+      price:
+        widget: select
+        widget_conf:
+          required: 0
+          options:
+            0: -- Select --
+            34: $34
+            45: $45
+      images:
+        widget: image
+        widget_conf:
+          required: 0
+          multiple: 1
+          upload_dir: files/fields/images
+          transform:
+            dimension: 500x320
+            refill: "0,0,0"
+            watermark: modules/site/assets/images/favicon.png
+      thumbnail:
+        widget: image
+        widget_conf:
+          required: 1
+          multiple: 0
+          upload_dir: files/fields/thumbnail
+          transform: 0
+
+            
+            
+          
+        
+    names:
+      en: Project
+      zh: 项目
+
+    
+    

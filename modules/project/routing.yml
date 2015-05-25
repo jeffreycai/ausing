@@ -1,0 +1,22 @@
+routing:
+
+  admin_project_list:
+    path: ^\/admin\/project\/list\/?$
+    isSecure: 1
+    i18n: 1
+    controller: project/backend/project_list
+  admin_project_edit:
+    path: ^\/admin\/project\/edit\/(\d+)\/?$
+    isSecure: 1
+    i18n: 1
+    controller: project/backend/project_edit
+  admin_project_create:
+    path: ^\/admin\/project\/create\/?$
+    isSecure: 1
+    i18n: 1
+    controller: project/backend/project_create
+  admin_project_delete:
+    path: ^\/admin\/project\/delete\/(\d+)\/?$
+    isSecure: 1
+    i18n: 0
+    controller: project/backend/project_delete
