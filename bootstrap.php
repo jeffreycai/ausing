@@ -17,8 +17,9 @@ if (isset($custom_modules)) {
       'form',
       'site',
       'mail',
-      'groupon'
-//      'crawler',
+      'deal',
+      'groupon',
+      'crawler',
 //      'queue',
   );
 

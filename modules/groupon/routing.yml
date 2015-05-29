@@ -1,6 +1,22 @@
 routing:
-  import:
+  groupon-import:
     path: ^\/admin\/groupon\/import\/?$
     isSecure: 1
     i18n: 0
     controller: groupon/backend/import
+  groupon-import-division:
+    path: ^\/admin\/groupon\/import\/division\/([^\/]+)\/?$
+    isSecure: 1
+    i18n: 0
+    controller: groupon/backend/import_division
+    
+  groupon-deal-import:
+    path: ^\/admin\/groupon\/deal\-import\/?$
+    isSecure: 1
+    i18n: 0
+    controller: groupon/backend/deal_import
+  groupon-build-affiliate-url:
+    path: ^\/admin\/groupon\/build\-affiliate\-url\/?$
+    isSecure: 1
+    i18n: 0
+    controller: groupon/backend/build_affiliate_url

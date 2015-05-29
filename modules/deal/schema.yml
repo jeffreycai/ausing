@@ -1,0 +1,75 @@
+deal:
+  pk: id
+  fields:
+    id: INT NOT NULL AUTO_INCREMENT
+    vendor: VARCHAR(10)
+    original_id: VARCHAR(32)
+    title: VARCHAR(512) NOT NULL
+    affiliate_url: VARCHAR(512) NOT NULL
+    original_url: VARCHAR(512)
+    thumbnail: VARCHAR(50)
+    images: VARCHAR(1024)
+    description: TEXT
+    created_at: INT
+    expired_at: INT
+    published: TINYINT(1) DEFAULT 0
+    valid: TINYINT(1) DEFAULT 1
+  indexes:
+    - `deal_original_id` (`original_id` ASC)
+  form:
+    fields:
+      title:
+        widget: textarea
+        widget_conf:
+          required: 0
+          wysiwyg: 0
+      affiliate_url:
+        widget: text
+        widget_conf:
+          required: 0
+      original_url:
+        widget: text
+        widget_conf:
+          required: 0
+      thumbnail:
+        widget: image
+        widget_conf:
+          required: 0
+          multiple: 0
+          upload_dir: files/groupon/thumbnails
+          transform:
+            dimension: 300x200
+            refill: "255,255,255"
+#            watermark: modules/site/assets/images/favicon.png
+      images:
+        widget: image
+        widget_conf:
+          required: 0
+          multiple: 1
+          upload_dir: files/groupon/images
+          transform:
+            dimension: 750x500
+            refill: "255,255,255"
+            watermark: modules/groupon/assets/images/groupon-logo.png
+      description:
+        widget: textarea
+        widget_conf:
+          required: 0
+          wysiwyg: 1
+      created_at:
+        widget: text
+        widget_conf:
+          required: 1
+      expired_at:
+        widget: text
+        widget_conf:
+          required: 0
+      published:
+        widget: checkbox_single
+        widget_conf: 
+      valid:
+        widget: checkbox_single
+        widget_conf: 
+    names:
+      en: "Deal"
+      zh: "折扣"

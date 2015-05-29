@@ -1,0 +1,29 @@
+routing:
+
+  admin_deal_list:
+    path: ^\/admin\/deal\/list\/?$
+    isSecure: 1
+    i18n: 1
+    controller: deal/backend/deal_list
+  admin_deal_edit:
+    path: ^\/admin\/deal\/edit\/(\d+)\/?$
+    isSecure: 1
+    i18n: 1
+    controller: deal/backend/deal_edit
+  admin_deal_create:
+    path: ^\/admin\/deal\/create\/?$
+    isSecure: 1
+    i18n: 1
+    controller: deal/backend/deal_create
+  admin_deal_delete:
+    path: ^\/admin\/deal\/delete\/(\d+)\/?$
+    isSecure: 1
+    i18n: 0
+    controller: deal/backend/deal_delete
+    
+    
+  deal_goto:
+    path: ^\/deal\/goto\/(\d+)\/?$
+    isSecure: 0
+    i18n: 0
+    controller: deal/goto
