@@ -12,26 +12,27 @@
         <label>Groupon page url</label>
         <input class="form-control" type="text" name="url" />
         <input type="submit" value="Import" class="btn btn-default btn-sm import" />
-      </form>
-      <script type="text/javascript">
-        $("#add-by-url input[type=submit]").click(function(event){
-          event.preventDefault();
-          
-          $(this).val('Importing ...').addClass('disabled');
-          
-          var form = $('#add-by-url');
-          var action = form.attr('action');
-          var url = $('input[name=url]', form).val();
-          $.post(action, "url="+encodeURIComponent(url), function(data){
-            if (data == 'success') {
-              $("#add-by-url input[name=url]").val('');
-            } else {
-              alert(data);
-            }
-            $("#add-by-url input[type=submit]").val('Import').removeClass('disabled');
+      
+        <script type="text/javascript">
+          $("#add-by-url input[type=submit]").click(function(event){
+            event.preventDefault();
+
+            $(this).val('Importing ...').addClass('disabled');
+
+            var form = $('#add-by-url');
+            var action = form.attr('action');
+            var url = $('input[name=url]', form).val();
+            $.post(action, "url="+encodeURIComponent(url), function(data){
+              if (data == 'success') {
+                $("#add-by-url input[name=url]").val('');
+              } else {
+                alert(data);
+              }
+              $("#add-by-url input[type=submit]").val('Import').removeClass('disabled');
+            });
           });
-        });
-      </script>
+        </script>
+      </form>
     </div>
   </div>
   

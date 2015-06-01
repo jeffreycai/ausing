@@ -23,6 +23,10 @@ deal:
         widget_conf:
           required: 0
           wysiwyg: 0
+      vendor:
+        widget: text
+        widget_conf:
+          required: 0
       affiliate_url:
         widget: text
         widget_conf:

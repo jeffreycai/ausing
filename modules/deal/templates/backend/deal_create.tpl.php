@@ -388,7 +388,9 @@ tr.fadeOut();
 </div>
 
 <script type='text/javascript' src='/libraries/ckeditor/ckeditor.js'></script>
-<script type='text/javascript'>CKEDITOR.replace('description');</script>  
+<script type='text/javascript'>CKEDITOR.replace('description',{
+    customConfig: '<?php echo uri('modules/deal/assets/js/ckeditor.conf.js', false) ?>'
+});</script>  
 <div class='form-group'>
   <label for='created_at'>created_at</label>
   <input value='<?php echo htmlentities(str_replace('\'', '"', ($object->isNew() ? (isset($_POST['created_at']) ? strip_tags($_POST['created_at']) : '') : $object->getCreatedAt()))) ?>' type='text' class='form-control' id='created_at' name='created_at' required />

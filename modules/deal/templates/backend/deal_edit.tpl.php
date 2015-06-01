@@ -27,6 +27,11 @@
 </div>
   
 <div class='form-group'>
+  <label for='vendor'>vendor</label>
+  <input value='<?php echo htmlentities(str_replace('\'', '"', ($object->isNew() ? (isset($_POST['vendor']) ? strip_tags($_POST['vendor']) : '') : $object->getVendor()))) ?>' type='text' class='form-control' id='vendor' name='vendor' />
+</div>
+  
+<div class='form-group'>
   <label for='affiliate_url'>affiliate_url</label>
   <input value='<?php echo htmlentities(str_replace('\'', '"', ($object->isNew() ? (isset($_POST['affiliate_url']) ? strip_tags($_POST['affiliate_url']) : '') : $object->getAffiliateUrl()))) ?>' type='text' class='form-control' id='affiliate_url' name='affiliate_url' />
 </div>
@@ -422,7 +427,6 @@ tr.fadeOut();
     </div>
   </div>
 </div>
-
 
 
 <?php if ($object->getVendor() == Groupon::VENDOR): ?>

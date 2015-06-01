@@ -9,6 +9,36 @@
   
   <div class="row">
     <div class="col-xs-12">
+      <form id="add-by-url" action="<?php echo uri('admin/groupon/deal-import', false) ?>" method="post" class="form-inline">
+        <label>Groupon page url</label>
+        <input class="form-control" type="text" name="url" />
+        <input type="submit" value="Import" class="btn btn-default btn-sm import" />
+      
+        <script type="text/javascript">
+          $("#add-by-url input[type=submit]").click(function(event){
+            event.preventDefault();
+
+            $(this).val('Importing ...').addClass('disabled');
+
+            var form = $('#add-by-url');
+            var action = form.attr('action');
+            var url = $('input[name=url]', form).val();
+            $.post(action, "url="+encodeURIComponent(url), function(data){
+              if (data == 'success') {
+                $("#add-by-url input[name=url]").val('');
+              } else {
+                alert(data);
+              }
+              $("#add-by-url input[type=submit]").val('Import').removeClass('disabled');
+            });
+          });
+        </script>
+      </form>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col-xs-12">
       <ul class="nav nav-tabs">
         <li role="presentation"<?php echo_link_active_class('/import$/', get_cur_page_url()) ?>><a href="<?php echo uri('admin/groupon/import') ?>">Homepage</a></li>
         <li role="presentation"<?php echo_link_active_class('/sydney\-premium/', get_cur_page_url()) ?>><a href="<?php echo uri('admin/groupon/import/division/sydney-premium') ?>">API - sydney-premium</a></li>

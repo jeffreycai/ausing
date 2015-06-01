@@ -1,5 +1,6 @@
 <?php
 
+// define file paths
 define('DEAL_THUMBNAIL_FOLDER', WEBROOT . DS . 'files/groupon/thumbnails');
 define('DEAL_IMAGES_FOLDER', WEBROOT . DS . 'files/groupon/images');
 if (!is_dir(DEAL_THUMBNAIL_FOLDER)) {
@@ -14,6 +15,8 @@ if (!is_writable(DEAL_THUMBNAIL_FOLDER)) {
 if (!is_writable(DEAL_IMAGES_FOLDER)) {
   die('DEAL_IMAGES_FOLDER needs to be writable.');
 }
+
+
 
 // register admin
 $user = User::getInstance();
