@@ -1,8 +1,12 @@
 <?php
 
 if (isset($_POST['email'])) {
-  sendemailAdmin('Site under construction - requester', 'Email: ' . strip_tags($_POST['email']));
-  Message::register(new Message(Message::SUCCESS, '提交成功，感谢您的支持！'));
+  if (empty(strip_tags($_POST['email']))) {
+    Message::register(new Message(Message::DANGER, '请填写邮箱地址'));
+  } else {
+    sendemailAdmin('Site under construction - requester', 'Email: ' . strip_tags($_POST['email']));
+    Message::register(new Message(Message::SUCCESS, '提交成功，感谢您的支持！'));
+  }
 }
 
 $html = new HTML();
