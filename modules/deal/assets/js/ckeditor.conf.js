@@ -10,4 +10,5 @@ CKEDITOR.editorConfig = function( config ) {
      [ 'TextColor', 'BGColor' ],
      [ 'Maximize', 'ShowBlocks' ]
    ];
+   config.allowedContent = true;  // turn off ACF
 };

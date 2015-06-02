@@ -10,6 +10,7 @@ deal:
     thumbnail: VARCHAR(50)
     images: VARCHAR(1024)
     description: TEXT
+    wechat_description: TEXT
     created_at: INT
     expired_at: INT
     published: TINYINT(1) DEFAULT 0
@@ -56,6 +57,11 @@ deal:
             refill: "255,255,255"
             watermark: modules/groupon/assets/images/groupon-logo.png
       description:
+        widget: textarea
+        widget_conf:
+          required: 0
+          wysiwyg: 1
+      wechat_description:
         widget: textarea
         widget_conf:
           required: 0

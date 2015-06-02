@@ -27,6 +27,11 @@
 </div>
   
 <div class='form-group'>
+  <label for='vendor'>vendor</label>
+  <input value='<?php echo htmlentities(str_replace('\'', '"', ($object->isNew() ? (isset($_POST['vendor']) ? strip_tags($_POST['vendor']) : '') : $object->getVendor()))) ?>' type='text' class='form-control' id='vendor' name='vendor' />
+</div>
+  
+<div class='form-group'>
   <label for='affiliate_url'>affiliate_url</label>
   <input value='<?php echo htmlentities(str_replace('\'', '"', ($object->isNew() ? (isset($_POST['affiliate_url']) ? strip_tags($_POST['affiliate_url']) : '') : $object->getAffiliateUrl()))) ?>' type='text' class='form-control' id='affiliate_url' name='affiliate_url' />
 </div>
@@ -390,7 +395,14 @@ tr.fadeOut();
 <script type='text/javascript' src='/libraries/ckeditor/ckeditor.js'></script>
 <script type='text/javascript'>CKEDITOR.replace('description',{
     customConfig: '<?php echo uri('modules/deal/assets/js/ckeditor.conf.js', false) ?>'
-});</script>  
+});</script>
+<div class='form-group'>
+  <label for='wechat_description'>wechat_description</label>
+  <textarea class='form-control' rows='5' id='wechat_description' name='wechat_description'><?php echo ($object->isNew() ? (isset($_POST['wechat_description']) ? htmlentities($_POST['wechat_description']) : '') : htmlentities($object->getWechatDescription())) ?></textarea>
+</div>
+<script type='text/javascript'>CKEDITOR.replace('wechat_description',{
+    customConfig: '<?php echo uri('modules/deal/assets/js/ckeditor.conf.js', false) ?>'
+});</script>
 <div class='form-group'>
   <label for='created_at'>created_at</label>
   <input value='<?php echo htmlentities(str_replace('\'', '"', ($object->isNew() ? (isset($_POST['created_at']) ? strip_tags($_POST['created_at']) : '') : $object->getCreatedAt()))) ?>' type='text' class='form-control' id='created_at' name='created_at' required />

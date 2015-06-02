@@ -12,6 +12,7 @@ include_once MODULESROOT . DS . 'core' . DS . 'includes' . DS . 'classes' . DS .
  * - thumbnail
  * - images
  * - description
+ * - wechat_description
  * - created_at
  * - expired_at
  * - published
@@ -90,6 +91,12 @@ class BaseDeal extends DBObject {
    public function getDescription() {
      return $this->getDbFieldDescription();
    }
+   public function setWechatDescription($var) {
+     $this->setDbFieldWechat_description($var);
+   }
+   public function getWechatDescription() {
+     return $this->getDbFieldWechat_description();
+   }
    public function setCreatedAt($var) {
      $this->setDbFieldCreated_at($var);
    }
@@ -143,6 +150,7 @@ CREATE TABLE IF NOT EXISTS `deal` (
   `thumbnail` VARCHAR(50) ,
   `images` VARCHAR(1024) ,
   `description` TEXT ,
+  `wechat_description` TEXT ,
   `created_at` INT ,
   `expired_at` INT ,
   `published` TINYINT(1) DEFAULT 0 ,

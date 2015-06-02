@@ -8,7 +8,7 @@ mail:
     host: mail.tpg.com.au
     port: 587
     username: bluestreamjc@tpg.com.au
-    nickname: 8点头条
+    nickname: AuSaving
     password: Monday01
   
   # general conf for site-wide emails

@@ -784,16 +784,24 @@ function escapeSingleQuote($var) {
  * 
  * @return type
  */
-function is_mobile() {
-  // if no session set, we try to tell from http header
-  if (!isset($_SESSION['mobile'])) {
+function is_mobile($check_cache = true) {
+  if ($check_cache) {
+    if (isset($_SESSION['is_mobile'])) {
+      return $_SESSION['is_mobile'];
+    } else if (isset($_COOKIE['is_mobile'])) {
+      return $_COOKIE['is_mobile'];
+    } else {
+      load_library_mobile_detect();
+      $detect = new Mobile_Detect;
+      $is_mobile = $detect->isMobile() ? 1 : 0;
+      $_SESSION['is_mobile'] = $is_mobile;
+      setcookie('is_mobile', $is_mobile, (time() + (3600 * 24 * 7)), '/' .  get_sub_root()); // store for 7 days
+      return $is_mobile;
+    }
+  } else {
     load_library_mobile_detect();
     $detect = new Mobile_Detect;
-    $_SESSION['mobile'] = $detect->isMobile();
-    return $_SESSION['mobile'];
-  // otherwise, return session value
-  } else {
-    return $_SESSION['mobile'] == true ? true : false;
+    return $detect->isMobile() ? 1 : 0;
   }
 }
 

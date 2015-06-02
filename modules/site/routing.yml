@@ -4,7 +4,20 @@ routing:
     isSecure: 0
     i18n: 0
     controller: site/index
+  coming_soon:
+    path: ^\/coming\-soon\/?$
+    isSecure: 0
+    i18n: 0
+    controller: site/coming_soon
+#### mobile ####
+  mobile_index:
+    path: ^\/m\/?$
+    isSecure: 0
+    i18n: 0
+    controller: site/mobile/index
     static_cache: 86400
+    
+
     
 assets:
   frontend:

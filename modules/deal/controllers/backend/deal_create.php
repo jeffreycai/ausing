@@ -10,6 +10,8 @@ if (isset($_POST['submit'])) {
   
   // validation for $title
   $title = isset($_POST["title"]) ? $_POST["title"] : null;  
+  // validation for $vendor
+  $vendor = isset($_POST["vendor"]) ? strip_tags($_POST["vendor"]) : null;  
   // validation for $affiliate_url
   $affiliate_url = isset($_POST["affiliate_url"]) ? strip_tags($_POST["affiliate_url"]) : null;  
   // validation for $original_url
@@ -20,6 +22,8 @@ if (isset($_POST['submit'])) {
   $images = isset($_POST["images"]) ? strip_tags(trim($_POST["images"])) : null;  
   // validation for $description
   $description = isset($_POST["description"]) ? $_POST["description"] : null;  
+  // validation for $wechat_description
+  $wechat_description = isset($_POST["wechat_description"]) ? $_POST["wechat_description"] : null;  
   // validation for $created_at
   $created_at = isset($_POST["created_at"]) ? strip_tags($_POST["created_at"]) : null;
   if (empty($created_at)) {
@@ -37,6 +41,9 @@ if (isset($_POST['submit'])) {
   // proceed for $title
   $object->setTitle($title);
   
+  // proceed for $vendor
+  $object->setVendor($vendor);
+  
   // proceed for $affiliate_url
   $object->setAffiliateUrl($affiliate_url);
   
@@ -51,6 +58,9 @@ if (isset($_POST['submit'])) {
   
   // proceed for $description
   $object->setDescription($description);
+  
+  // proceed for $wechat_description
+  $object->setWechatDescription($wechat_description);
   
   // proceed for $created_at
   $object->setCreatedAt($created_at);
