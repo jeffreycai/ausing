@@ -393,12 +393,16 @@ tr.fadeOut();
 </div>
 
 <script type='text/javascript' src='/libraries/ckeditor/ckeditor.js'></script>
-<script type='text/javascript'>CKEDITOR.replace('description');</script>  
+<script type='text/javascript'>CKEDITOR.replace('description',{
+    customConfig: '<?php echo uri('modules/deal/assets/js/ckeditor.conf.js', false) ?>'
+});</script>
 <div class='form-group'>
   <label for='wechat_description'>wechat_description</label>
   <textarea class='form-control' rows='5' id='wechat_description' name='wechat_description'><?php echo ($object->isNew() ? (isset($_POST['wechat_description']) ? htmlentities($_POST['wechat_description']) : '') : htmlentities($object->getWechatDescription())) ?></textarea>
 </div>
-<script type='text/javascript'>CKEDITOR.replace('wechat_description');</script>  
+<script type='text/javascript'>CKEDITOR.replace('wechat_description',{
+    customConfig: '<?php echo uri('modules/deal/assets/js/ckeditor.conf.js', false) ?>'
+});</script>
 <div class='form-group'>
   <label for='created_at'>created_at</label>
   <input value='<?php echo htmlentities(str_replace('\'', '"', ($object->isNew() ? (isset($_POST['created_at']) ? strip_tags($_POST['created_at']) : '') : $object->getCreatedAt()))) ?>' type='text' class='form-control' id='created_at' name='created_at' required />
@@ -433,3 +437,23 @@ tr.fadeOut();
   </div>
 </div>
 
+<?php if ($object->getVendor() == Groupon::VENDOR): ?>
+<script type="text/javascript">
+  jQuery(function($){
+    $('label[for="affiliate_url"]').append('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<?php echo uri('admin/groupon/build-affiliate-url', false) ?>" id="update-affiliate-url"><i class="fa fa-cloud-download"></i></a>');
+    $('#update-affiliate-url').on('click', function(event){
+      event.preventDefault();
+      
+      $('i', this).removeClass('fa-cloud-download').addClass('fa-spin fa-spinner');
+      $.get($(this).attr('href'), "url="+encodeURIComponent($('#original_url').val()), function(data){
+        $('#update-affiliate-url i').removeClass('fa-spin fa-spinner').addClass('fa-cloud-download');
+        if (data.status == 'success') {
+          $('#affiliate_url').val(data.affiliate_url);
+        } else {
+          alert(data.error_msg);
+        }
+      }, 'json');
+    });
+  });
+</script>
+<?php endif; ?>

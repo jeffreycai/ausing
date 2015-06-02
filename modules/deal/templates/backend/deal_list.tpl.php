@@ -20,14 +20,7 @@
       <tr role="row">
                 <th>id</th>
                 <th>vendor</th>
-                <th>original_id</th>
-                <th>title</th>
-                <th>affiliate_url</th>
-                <th>original_url</th>
-                <th>thumbnail</th>
-                <th>images</th>
-                <th>description</th>
-                <th>wechat_description</th>
+
                 <th>created_at</th>
                 <th>expired_at</th>
                 <th>published</th>
@@ -40,14 +33,7 @@
     <tr>
             <td><?php echo $object->getId() ?></td>
             <td><?php echo $object->getVendor() ?></td>
-            <td><?php echo $object->getOriginalId() ?></td>
-            <td><?php echo $object->getTitle() ?></td>
-            <td><?php echo $object->getAffiliateUrl() ?></td>
-            <td><?php echo $object->getOriginalUrl() ?></td>
-            <td><?php echo $object->getThumbnail() ?></td>
-            <td><?php echo $object->getImages() ?></td>
-            <td><?php echo $object->getDescription() ?></td>
-            <td><?php echo $object->getWechatDescription() ?></td>
+ 
             <td><?php echo $object->getCreatedAt() ?></td>
             <td><?php echo $object->getExpiredAt() ?></td>
             <td><?php echo $object->getPublished() ?></td>

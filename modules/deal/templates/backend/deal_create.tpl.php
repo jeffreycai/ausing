@@ -437,3 +437,23 @@ tr.fadeOut();
   </div>
 </div>
 
+<?php if ($object->getVendor() == Groupon::VENDOR): ?>
+<script type="text/javascript">
+  jQuery(function($){
+    $('label[for="affiliate_url"]').append('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<?php echo uri('admin/groupon/build-affiliate-url', false) ?>" id="update-affiliate-url"><i class="fa fa-cloud-download"></i></a>');
+    $('#update-affiliate-url').on('click', function(event){
+      event.preventDefault();
+      
+      $('i', this).removeClass('fa-cloud-download').addClass('fa-spin fa-spinner');
+      $.get($(this).attr('href'), "url="+encodeURIComponent($('#original_url').val()), function(data){
+        $('#update-affiliate-url i').removeClass('fa-spin fa-spinner').addClass('fa-cloud-download');
+        if (data.status == 'success') {
+          $('#affiliate_url').val(data.affiliate_url);
+        } else {
+          alert(data.error_msg);
+        }
+      }, 'json');
+    });
+  });
+</script>
+<?php endif; ?>

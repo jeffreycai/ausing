@@ -80,7 +80,7 @@ if (isset($_POST['submit'])) {
   if ($error_flag == false) {
     if ($object->save()) {
       Message::register(new Message(Message::SUCCESS, i18n(array("en" => "Record saved", "zh" => "记录保存成功"))));
-      HTML::forwar('admin/deal/list');
+      HTML::forward('admin/deal/list');
     } else {
       Message::register(new Message(Message::DANGER, i18n(array("en" => "Record failed to save", "zh" => "记录保存失败"))));
     }
