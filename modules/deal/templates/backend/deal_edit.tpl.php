@@ -90,7 +90,7 @@
       var file = this.files[0];
       if (!file.type.match(/^image/)) {
         alert('<?php echo i18n(array('en' => 'Upload file needs to be an image file', 'zh' => '上传文件需为图片文件')) ?>');
-      } else if (file.size > (1 * 1000 * 1000)) {
+      } else if (file.size > (2 * 1000 * 1000)) {
         alert('<?php echo i18n(array('en' => 'File size should be less than', 'zh' => '文件大小应小于')) . ' 2MB' ?>');
       } else {
         var reader = new FileReader();
@@ -266,7 +266,7 @@ tr.html(addImageRow(false, true));
       var file = this.files[0];
       if (!file.type.match(/^image/)) {
         alert('<?php echo i18n(array('en' => 'Upload file needs to be an image file', 'zh' => '上传文件需为图片文件')) ?>');
-      } else if (file.size > (1 * 1000 * 1000)) {
+      } else if (file.size > (2 * 1000 * 1000)) {
         alert('<?php echo i18n(array('en' => 'File size should be less than', 'zh' => '文件大小应小于')) . ' 2MB' ?>');
       } else {
         var reader = new FileReader();
