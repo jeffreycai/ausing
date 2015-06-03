@@ -52,6 +52,7 @@ function buffer_flush() {
         exit;
       } else {
         echo $content;
+        exit;
       }
     }
     
