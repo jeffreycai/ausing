@@ -10,5 +10,8 @@ CKEDITOR.editorConfig = function( config ) {
      [ 'TextColor', 'BGColor' ],
      [ 'Maximize', 'ShowBlocks' ]
    ];
+   
    config.allowedContent = true;  // turn off ACF
+   
+   config.templates_files = ['/modules/deal/assets/js/ckeditor_custom_templates.js'];
 };
