@@ -55,7 +55,7 @@ deal:
           transform:
             dimension: 750x500
             refill: "255,255,255"
-            watermark: modules/groupon/assets/images/groupon-logo.png
+#            watermark: modules/groupon/assets/images/groupon-logo.png
       description:
         widget: textarea
         widget_conf:

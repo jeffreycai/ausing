@@ -48,7 +48,7 @@ if (isset($_FILES)) {
         $image = WideImage::load($tmp_location);
         unlink($tmp_location);
         $refill = "255,255,255";
-        $watermark = WEBROOT . DS . 'modules/groupon/assets/images/groupon-logo.png';
+        $watermark = false;
         if ($refill) {
           $bgcolor = $image->allocateColor(255,255,255);
           $image = $image->resize(750, 500, 'inside')->resizeCanvas(750, 500, 'center', 'center', $bgcolor);
@@ -57,7 +57,7 @@ if (isset($_FILES)) {
         }
 
         if ($watermark) {
-          $watermark = WideImage::load(WEBROOT . DS . "modules/groupon/assets/images/groupon-logo.png");
+          $watermark = WideImage::load(WEBROOT . DS . "0");
           $image = $image->merge($watermark, 'right-10', 'bottom-10', 50);
         }
         $image->saveToFile($dest_location);
