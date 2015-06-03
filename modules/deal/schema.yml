@@ -7,7 +7,7 @@ deal:
     title: VARCHAR(512) NOT NULL
     affiliate_url: VARCHAR(512) NOT NULL
     original_url: VARCHAR(512)
-    thumbnail: VARCHAR(50)
+    thumbnail: VARCHAR(150)
     images: VARCHAR(1024)
     description: TEXT
     wechat_description: TEXT
