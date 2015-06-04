@@ -196,7 +196,7 @@ COLLATE = utf8_general_ci;
   
   static function findAllWithPage($page, $entries_per_page) {
     global $mysqli;
-    $query = "SELECT * FROM deal LIMIT " . ($page - 1) * $entries_per_page . ", " . $entries_per_page;
+    $query = "SELECT * FROM deal ORDER BY created_at DESC LIMIT " . ($page - 1) * $entries_per_page . ", " . $entries_per_page;
     $result = $mysqli->query($query);
     
     $rtn = array();
