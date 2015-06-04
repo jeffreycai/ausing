@@ -20,7 +20,7 @@
       <tr role="row">
                 <th>id</th>
                 <th>vendor</th>
-
+                <th>title</th>
                 <th>created_at</th>
                 <th>expired_at</th>
                 <th>published</th>
@@ -33,7 +33,7 @@
     <tr>
             <td><?php echo $object->getId() ?></td>
             <td><?php echo $object->getVendor() ?></td>
- 
+            <td><?php echo $object->getTitle() ?></td>
             <td><?php echo $object->getCreatedAt() ?></td>
             <td><?php echo $object->getExpiredAt() ?></td>
             <td><?php echo $object->getPublished() ?></td>
