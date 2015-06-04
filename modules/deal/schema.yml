@@ -2,7 +2,7 @@ deal:
   pk: id
   fields:
     id: INT NOT NULL AUTO_INCREMENT
-    vendor: VARCHAR(10)
+    vendor: VARCHAR(20)
     original_id: VARCHAR(32)
     title: VARCHAR(512) NOT NULL
     affiliate_url: VARCHAR(512) NOT NULL
